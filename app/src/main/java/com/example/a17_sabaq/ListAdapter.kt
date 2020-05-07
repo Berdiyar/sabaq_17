@@ -1,5 +1,6 @@
 package com.example.a17_sabaq
 
+import android.accounts.AuthenticatorDescription
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +15,8 @@ class ListAdapter(private val activity: MainActivity) : RecyclerView.Adapter<Lis
         notifyDataSetChanged()
     }
 
-    /*fun ozgertiriw(data: MutableList<User>){
-        models = data
-        notifyDataSetChanged()
-    }*/
-
-    fun addUser(position: Int) {
-        models.add(position, User("Title ${models.size+1}", "Description ${models.size + 1}"))
+    fun addUser(position: Int, title: String, description: String) {
+        models.add(position, User(title, description))
         notifyItemInserted(position)
         notifyItemRangeChanged(position, models.size)
     }

@@ -5,10 +5,6 @@
         android:id="@+id/itemAdd"
         android:title="@string/add"/>
     <item
-        android:id="@+id/edit"
-        android:title="@string/changed"
-        />
-    <item
         android:id="@+id/itemDelete"
         android:title="@string/delete"/>
 
