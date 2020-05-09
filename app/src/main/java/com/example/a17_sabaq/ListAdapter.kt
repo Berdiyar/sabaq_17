@@ -15,18 +15,6 @@ class ListAdapter(private val activity: MainActivity) : RecyclerView.Adapter<Lis
         notifyDataSetChanged()
     }
 
-    fun addUser(position: Int, title: String, description: String) {
-        models.add(position, User(title, description))
-        notifyItemInserted(position)
-        notifyItemRangeChanged(position, models.size)
-    }
-
-    fun removeUser(position: Int) {
-        models.removeAt(position)
-        notifyItemRemoved(position)
-        notifyItemRangeChanged(position, models.size)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val itemView: View = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         return ListViewHolder(itemView)
@@ -37,6 +25,7 @@ class ListAdapter(private val activity: MainActivity) : RecyclerView.Adapter<Lis
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+
         holder.populateModel(models[position], itemCount, position, activity)
     }
 }

@@ -3,58 +3,45 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:minWidth="280dp">
+    android:minWidth="280dp"
+    >
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:id="@+id/title"
+        android:id="@+id/tvtitle"
+        android:gravity="bottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="bottom"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toTopOf="parent"
         android:textSize="20sp"
-        style="bold"
-        android:text="User qosiw!"
-        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Adding user"
+        android:textColor="#000000"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
         />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/inputText"
-        app:layout_constraintStart_toStartOf="@+id/title"
-        app:layout_constraintEnd_toEndOf="@+id/title"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/scrollView"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitle"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancel"
         >
-        <EditText
-            android:layout_width="match_parent"
-            android:id="@+id/edit_Text"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:hint="User Title"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/inputText2"
-        app:layout_constraintStart_toStartOf="@+id/inputText"
-        app:layout_constraintEnd_toEndOf="@+id/inputText"
-        app:layout_constraintTop_toBottomOf="@+id/inputText"
-        >
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edit_Text_Des"
-            android:hint="User Descriotion"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
+        android:layout_marginEnd="16dp"
+        android:paddingEnd="16dp"
+        />
+    </ScrollView>
     <TextView
         android:layout_width="wrap_content"
         android:id="@+id/btnOk"
@@ -71,8 +58,8 @@
         android:layout_marginBottom="8dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputText2"
-        app:layout_constraintEnd_toEndOf="@+id/inputText2"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
@@ -92,7 +79,7 @@
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/btnOk"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputText2"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

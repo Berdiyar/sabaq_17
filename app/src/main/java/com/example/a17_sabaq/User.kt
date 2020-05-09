@@ -1,3 +1,3 @@
 package com.example.a17_sabaq
 
-class User(var title: String = "", var description: String = "")
+class User(var title: String = "")
