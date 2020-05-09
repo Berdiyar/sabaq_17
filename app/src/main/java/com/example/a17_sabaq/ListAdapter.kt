@@ -25,7 +25,6 @@ class ListAdapter(private val activity: MainActivity) : RecyclerView.Adapter<Lis
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-
         holder.populateModel(models[position], itemCount, position, activity)
     }
 }
